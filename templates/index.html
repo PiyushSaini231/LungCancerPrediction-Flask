@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Lung Cancer Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="AirPollution" placeholder="AirPollution" required="required" />
+        <input type="text" name="Alcoholuse" placeholder="Alcoholuse" required="required" />
+		<input type="text" name="GeneticRisk" placeholder="GeneticRisk" required="required" />
+		<input type="text" name="BalancedDiet" placeholder="BalancedDiet" required="required" />
+        <input type="text" name="Obesity" placeholder="Obesity" required="required" />
+        <input type="text" name="Smoking" placeholder="Smoking" required="required" />
+        <input type="text" name="PassiveSmoker" placeholder="PassiveSmoker" required="required" />
+        <input type="text" name="ChestPain" placeholder="ChestPain" required="required" />
+        <input type="text" name="CoughingofBlood" placeholder="CoughingofBlood" required="required" />
+        <input type="text" name="Fatigue" placeholder="Fatigue" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
